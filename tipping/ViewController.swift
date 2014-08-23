@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet var tipAmount : UILabel
     
     let tipPercentages = [0.18, 0.20, 0.25]
+    let key = "default_tip_percentage_index"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ class ViewController: UIViewController {
         
         // Set default settings
         var settings = NSUserDefaults.standardUserDefaults()
-        var tipIndex = settings.integerForKey("default_tip_percentage_index")
+        var tipIndex = settings.integerForKey(key)
         tipSelector.selectedSegmentIndex = tipIndex
         
         // Initialize all values on screen
@@ -39,7 +40,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
        var settings = NSUserDefaults.standardUserDefaults()
-        var tipIndex = settings.integerForKey("default_tip_percentage_index")
+        var tipIndex = settings.integerForKey(key)
         tipSelector.selectedSegmentIndex = tipIndex
         
         self.onEditingChanged(self)
