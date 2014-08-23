@@ -17,13 +17,11 @@ class SettingsViewController: UIViewController {
     let key = "default_tip_percentage_index"
     
     init(coder: NSCoder?) {
-        println("Settings init")
         settings = NSUserDefaults.standardUserDefaults()
         super.init(coder: coder)
     }
     
     override func viewDidLoad() {
-        println("Settings load")
         super.viewDidLoad()
         
         var defaultTipPercentageIndex = settings.integerForKey(key)
